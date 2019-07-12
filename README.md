@@ -31,8 +31,6 @@ A package by [Fooxly](https://www.fooxly.com).
 ## 📕 Features
 
 * Overview of the keywords provided in your settings.json
-* **Jump** between notes by using the context menu or commands
-* **View** all of your notes in a long and complex file in just seconds
 
 ## 📐 Configuration
 
@@ -42,7 +40,52 @@ You can customize your keywords and lots of other stuff in your `settings.json` 
 
 | property                             | type      | default               | options                                                  | description |
 | ---                                  | ---       | ---                   | ---                                                      | ----        |
+| provision.syntax                     | object    | *check below*         | [syntax](#Syntax)                                        | Object with keywords and the styling settings to use |
 | provision.notes                      | object    | *check below*         | [notes](#Notes)                                          | Object with keywords and settings to use |
+
+#### Syntax
+
+All the keywords that are defined in the `provision.notes` and which need some styling need to be in the  `provision.syntax` property. You can customize keywords using the following options:
+
+| property        | type            | default       | options                                                                     | description |
+| ---             | ---             | ---           | ---                                                                         | ---         |
+| keyword         | string          | *check below* | -                                                                           | The keyword which needs to be styled |
+| color           | string          | *check below* | [color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | Text color when highlighted |
+| rulerPlacement  | enum            | right         | left, center, right, full, off                                              | The placement in the ruler |
+| rulerColor      | string          | *check below* | [color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | Color in overview ruler |
+| backgroundColor | string          | *check below* | [color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) | Background color when highlighted |
+| highlight       | enum            | keyword       | keyword, line                                                               | Type of highlighting |
+
+**Default**:
+
+```json
+"provision.syntax": [
+  {
+    "keyword": "TODO",
+    "color": "#fff",
+    "backgroundColor": "#f2b01f",
+    "rulerPlacement": "right",
+    "rulerColor": "rgba(242, 176, 31, 0.8)",
+    "highlight": "keyword"
+  },
+  {
+    "keyword": "FIXME",
+    "color": "#fff",
+    "backgroundColor": "#d85f88",
+    "rulerPlacement": "right",
+    "rulerColor": "rgba(216, 95, 136, 0.8)",
+    "highlight": "keyword"
+  },
+  {
+    "keyword": "NOTE",
+    "color": "#aaa",
+    "backgroundColor": "#434343",
+    "rulerPlacement": "right",
+    "rulerColor": "rgba(67, 67, 67, 0.8)",
+    "highlight": "keyword"
+  }
+]
+```
 
 #### Notes
 
