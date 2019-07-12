@@ -1,3 +1,0 @@
-[submodule "core"]
-	path = src/core
-	url = https://gitlab.com/fooxly/provision/provision-core
