@@ -221,7 +221,7 @@
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
-		"update-core": "git pull --recurse-submodules",
+		"update-core": "git pull --recurse-submodules && git submodule update --remote",
 		"watch": "tsc -watch -p ./",
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "yarn run compile && node ./node_modules/vscode/bin/test"

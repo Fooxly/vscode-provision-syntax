@@ -1,31 +1,31 @@
 import * as vscode from 'vscode'
-import Document from './core/src/document/Document'
+import Core from './core/src/Core'
 import Provision from './core/src/Provision'
 import Syntaxing from './syntax/Syntaxing'
 
-var document: Document
 var syntaxing: Syntaxing
+var core: Core
 
 const modules: Provision[] = []
 
 export function activate(context: vscode.ExtensionContext) {
-	document = new Document(context)
+	core = new Core(context)
+
 	syntaxing = new Syntaxing()
 	modules.push(syntaxing)
-	modules.forEach(m => m.initialize())
-	document.onUpdate(d => {
+	core.onUpdate(d => {
 		modules.forEach(m => m.onUpdate(d))
 	})
 	
-	vscode.workspace.onDidChangeConfiguration(() => {		
-		document.configChanged()
+	vscode.workspace.onDidChangeConfiguration(() => {
 		modules.forEach(m => m.configChanged())
 	}, null, context.subscriptions)
-
-	document.start()
+	
+	modules.forEach(m => m.initialize())
+	core.start()
 }
 
 export function deactivate() {
-	document.dispose()
+	core.dispose()
 	modules.forEach(m => m.dispose())
 }
