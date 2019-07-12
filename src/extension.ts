@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
-import Document from './core/document/Document'
+import Document from './core/src/document/Document'
+import Provision from './core/src/Provision'
 import Syntaxing from './syntax/Syntaxing'
-import Provision from './core/Provision'
 
 var document: Document
 var syntaxing: Syntaxing

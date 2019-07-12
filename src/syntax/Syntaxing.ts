@@ -1,5 +1,5 @@
-import Provision from '../core/Provision'
-import { window, TextEditorDecorationType, OverviewRulerLane } from 'vscode';
+import { window, OverviewRulerLane } from 'vscode'
+import Provision from '../core/src/Provision'
 
 export default class Syntaxing extends Provision {
 
