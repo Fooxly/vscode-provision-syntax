@@ -1,4 +1,4 @@
-import { TextEditor, ExtensionContext, Selection, TextEditorRevealType, TextDocument, WorkspaceConfiguration, workspace, window, Position, Range, Event, Disposable } from 'vscode'
+import { TextEditor, ExtensionContext, Selection, TextEditorRevealType, TextDocument, WorkspaceConfiguration, workspace, window, Position, Range, Disposable } from 'vscode'
 
 export default class Document {
   private static _instance: Document

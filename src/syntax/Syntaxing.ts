@@ -62,17 +62,6 @@ export default class Syntaxing extends Provision {
 
   public configChanged() {
     super.configChanged()
-
-    let syntax = this.settings.get<any>('syntax', [])
     this.styling = {}
-    // this.existing.forEach((val, key) => {
-    //   this.removeStatusbarItem(key)
-    // })
-  }
-
-  public dispose() {
-    // this.existing.forEach(i => {
-    //   i.dispose()
-    // })
   }
 }
