@@ -1,0 +1,235 @@
+{
+	"name": "provision-syntax",
+	"displayName": "Provision Syntax",
+	"description": "Providing a simple way to view all notes in your workspace based on keywords.",
+	"author": "Fooxly",
+	"publisher": "Fooxly",
+	"license": "MIT",
+	"icon": "assets/icon.png",
+	"keywords": [
+		"fooxly",
+		"vscode",
+		"code",
+		"todo",
+		"fixme",
+		"note",
+		"notes",
+		"keyword",
+		"highlighting",
+		"syntax"
+	],
+	"homepage": "https://github.com/Fooxly/vscode-provision-syntax",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Fooxly/vscode-provision-syntax.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Fooxly/vscode-provision-syntax/issues",
+		"email": "bugs@fooxly.com"
+	},
+	"galleryBanner": {
+		"color": "#272729",
+		"theme": "dark"
+	},
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.35.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./lib/extension.js",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Provision",
+			"properties": {
+				"provision.syntax": {
+					"type": "array",
+					"description": "All the syntax settings for each keyword",
+					"items": {
+						"type": "object",
+						"description": "A keyword syntax setting object",
+						"properties": {
+							"keyword": {
+								"type": "string",
+								"description": "The keyword that needs to be defined"
+							},
+							"color": {
+								"type": "string",
+								"description": "The color of the text"
+							},
+							"backgroundColor": {
+								"type": "string",
+								"description": "The background color of the text"
+							},
+							"rulerColor": {
+								"type": "string",
+								"description": "The highlight color inside of the ruler"
+							},
+							"rulerPlacement": {
+								"type": "string",
+								"enum": [
+									"left",
+									"center",
+									"right",
+									"full",
+									"off"
+								],
+								"description": "The position of the ruler highlight"
+							},
+							"highlight": {
+								"type": "string",
+								"enum": [
+									"keyword",
+									"line"
+								],
+								"description": "The way the note needs to be highlighted"
+							}
+						}
+					},
+					"default": [
+						{
+							"keyword": "TODO",
+							"color": "#fff",
+							"backgroundColor": "#f2b01f",
+							"rulerPlacement": "right",
+							"rulerColor": "rgba(242, 176, 31, 0.8)",
+							"highlight": "keyword"
+						},
+						{
+							"keyword": "FIXME",
+							"color": "#fff",
+							"backgroundColor": "#d85f88",
+							"rulerPlacement": "right",
+							"rulerColor": "rgba(216, 95, 136, 0.8)",
+							"highlight": "keyword"
+						},
+						{
+							"keyword": "NOTE",
+							"color": "#aaa",
+							"backgroundColor": "#434343",
+							"rulerPlacement": "right",
+							"rulerColor": "rgba(67, 67, 67, 0.8)",
+							"highlight": "keyword"
+						}
+					]
+				},
+				"provision.notes": {
+					"type": "array",
+					"description": "The provision notes object",
+					"items": {
+						"type": "object",
+						"description": "A defined provision group",
+						"properties": {
+							"keywords": {
+								"type": "array",
+								"description": "The keywords that belong to this group",
+								"items": {
+									"type": "object",
+									"description": "A specific keyword option with settings",
+									"properties": {
+										"keyword": {
+											"type": "string",
+											"description": "The keyword that needs to be defined"
+										},
+										"useColons": {
+											"type": "boolean",
+											"description": "If the keyword needs to have a colon after it for it to count",
+											"default": true
+										},
+										"caseSensitive": {
+											"type": "boolean",
+											"description": "If the keyword needs to be case sensitive",
+											"default": true
+										}
+									}
+								}
+							},
+							"priority": {
+								"type": "number",
+								"description": "The priority of the statusbar items",
+								"default": 10
+							},
+							"tooltip": {
+								"type": "string",
+								"description": "The tooltip that will be shown when you hover over the item"
+							},
+							"text": {
+								"type": [
+									"object",
+									"string"
+								],
+								"description": "The text that will be shown",
+								"properties": {
+									"one": {
+										"type": "string",
+										"description": "The text that will be shown when there is only 1 item"
+									},
+									"multiple": {
+										"type": "string",
+										"description": "The text that will be shown when there are 0 or more than 1 items"
+									}
+								}
+							}
+						}
+					},
+					"default": [
+						{
+							"keywords": [
+								{
+									"keyword": "TODO",
+									"useColons": true,
+									"caseSensitive": true
+								},
+								{
+									"keyword": "FIXME",
+									"useColons": true,
+									"caseSensitive": true
+								}
+							],
+							"priority": 10,
+							"tooltip": "These are all the 'TODO' and 'FIXME' notes in this file",
+							"text": {
+								"one": "📝 {0} TODO",
+								"multiple": "📝 {0} TODOs"
+							}
+						},
+						{
+							"keywords": [
+								{
+									"keyword": "NOTE",
+									"useColons": true,
+									"caseSensitive": true
+								}
+							],
+							"priority": 9,
+							"tooltip": "These are all the notes in this file",
+							"text": {
+								"one": "📝 {0} Note",
+								"multiple": "📝 {0} Notes"
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	}
+}
