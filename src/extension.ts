@@ -13,9 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	syntaxing = new Syntaxing()
 	modules.push(syntaxing)
-	core.onUpdate(d => {
-		modules.forEach(m => m.onUpdate(d))
-	})
+	core.onUpdate((d: any) => modules.forEach(m => m.onUpdate(d)))
 	
 	vscode.workspace.onDidChangeConfiguration(() => {
 		modules.forEach(m => m.configChanged())

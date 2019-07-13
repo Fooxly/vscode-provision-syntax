@@ -22,20 +22,20 @@ export default class Syntaxing extends Provision {
       }
     }
 
-    for(let group of data) {
+    for (let group of data) {
       for(let i of group.items) {
         let s = syntax.find((e: any) => { return e.keyword === i.keyword })
         if(!s || !groups[s.keyword]) continue
         groups[s.keyword].items.push(i.range)
       }
     }
-    for(let g in groups) {
+    for (let g in groups) {
       window.activeTextEditor.setDecorations(groups[g].settings, groups[g].items)
     }
   }
 
   private getStyling(syntax: any): any {
-    if(this.styling[syntax.keyword]) return this.styling[syntax.keyword]
+    if (this.styling[syntax.keyword]) return this.styling[syntax.keyword]
     return this.styling[syntax.keyword] = window.createTextEditorDecorationType({
       backgroundColor: syntax.backgroundColor,
       isWholeLine: syntax.highlight === 'line',
