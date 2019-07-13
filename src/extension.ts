@@ -9,7 +9,7 @@ var core: Core
 const modules: Provision[] = []
 
 export function activate(context: vscode.ExtensionContext) {
-	core = new Core(context)
+	core = new Core(context, false)
 
 	syntaxing = new Syntaxing()
 	modules.push(syntaxing)
