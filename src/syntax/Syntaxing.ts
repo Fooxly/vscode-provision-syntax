@@ -2,10 +2,15 @@ import { window, OverviewRulerLane } from 'vscode'
 import Provision from '../core/src/Provision'
 
 export default class Syntaxing extends Provision {
-
+  private timeout?: NodeJS.Timeout
   private styling: any = {}
 
   public onUpdate(data: any) {
+    this.timeout && clearTimeout(this.timeout)
+    this.timeout = setTimeout(() => this.updateDecorations(data), 0)
+  }
+
+  private updateDecorations(data: any) {
     if(!window.activeTextEditor) return
     let syntax = this.settings.get<any>('syntax', [])
     let groups: any = {}
