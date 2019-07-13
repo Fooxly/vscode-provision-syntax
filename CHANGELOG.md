@@ -1,6 +1,6 @@
 # Change Log
 
-## [1.0.0] - 2019-07-12
+## [1.0.0] - 2019-07-13
 ### Added
-- Context menu items for finding the previous and next note
+- options for each keyword
 - Completed README

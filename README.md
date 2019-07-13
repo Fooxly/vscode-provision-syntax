@@ -38,10 +38,10 @@ A package by [Fooxly](https://www.fooxly.com).
 
 You can customize your keywords and lots of other stuff in your `settings.json` using the following options:
 
-| property                             | type      | default               | options                                                  | description |
-| ---                                  | ---       | ---                   | ---                                                      | ----        |
-| provision.syntax                     | object    | *check below*         | [syntax](#Syntax)                                        | Object with keywords and the styling settings to use |
-| provision.notes                      | object    | *check below*         | [notes](#Notes)                                          | Object with keywords and settings to use |
+| property                             | type      | default               | options                                              | description |
+| ---                                  | ---       | ---                   | ---                                                  | ----        |
+| provision.syntax                     | object    | *check below*         | [syntax](#Syntax)                                    | Object with keywords and the styling settings to use |
+| provision.notes                      | object    | *check below*         | [notes](#Notes)                                      | Object with keywords and settings to use |
 
 #### Syntax
 
