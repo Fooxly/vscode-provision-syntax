@@ -11,9 +11,9 @@ export default class Syntaxing extends Provision {
   }
 
   private updateDecorations(data: any) {
-    if(!window.activeTextEditor) return
-    let syntax = this.settings.get<any>('syntax', [])
-    let groups: any = {}
+    if (!window.activeTextEditor) return
+    const syntax = this.settings.get<any>('syntax', [])
+    const groups: any = {}
 
     for(let s of syntax) {
       groups[s.keyword] = {
@@ -47,21 +47,10 @@ export default class Syntaxing extends Provision {
 
   private getRulerLane(lane: string): OverviewRulerLane | undefined {
     switch(lane) {
-      case 'left': {
-        return OverviewRulerLane.Left
-      }
-      case 'right': {
-        return OverviewRulerLane.Right
-      }
-      case 'center': {
-        return OverviewRulerLane.Center
-      }
-      case 'full': {
-        return OverviewRulerLane.Full
-      }
-      default: {
-        return
-      }
+      case 'left': return OverviewRulerLane.Left
+      case 'right': return OverviewRulerLane.Right
+      case 'center': return OverviewRulerLane.Center
+      case 'full': return OverviewRulerLane.Full
     }
   }
 
