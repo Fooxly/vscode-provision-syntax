@@ -57,6 +57,23 @@
 			"type": "object",
 			"title": "Provision",
 			"properties": {
+				"provision.moveOnSingle": {
+					"type": "boolean",
+					"title": "Move On Single",
+					"description": "Jump instantly to a note when there are no others inside the file/class/functions",
+					"default": true
+				},
+				"provision.popup.sorting": {
+					"type": "string",
+					"enum": [
+						"line_numbers_asc",
+						"line_numbers_desc",
+						"category"
+					],
+					"title": "Pop-up sorting method",
+					"description": "Sorting method used to order the pop-up items",
+					"default": "line_numbers_asc"
+				},
 				"provision.keywords": {
 					"type": "object",
 					"title": "Keywords",
