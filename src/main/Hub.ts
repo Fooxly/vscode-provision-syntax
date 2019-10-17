@@ -39,6 +39,18 @@ export default class Hub extends Main implements DocumentListener {
   }
 
   public update(data?: any) {
+    if(this.data && this.styling) {
+      for(let k in this.data) {
+        if(this.data[k].amount !== data[k].amount) {
+          let s = this.styling.get(k)
+          if(s) {
+            s.dispose()
+            this.styling.delete(k)
+          }
+        }
+      }
+    }
+    
     this.data = data
     this.timeout && clearTimeout(this.timeout)
     this.timeout = setTimeout(() => this.updateDecorations(data), 0)
