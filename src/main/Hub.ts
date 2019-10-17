@@ -8,8 +8,8 @@ import Utils from '../core/Utils'
 export default class Hub extends Main implements DocumentListener {
   public document?: Document
   private styling: Map<string, TextEditorDecorationType> = new Map<string, TextEditorDecorationType>()
-
   private timeout?: NodeJS.Timeout
+  private data?: any
 
   protected initialize() {
     this.document = new Document(this)
@@ -19,6 +19,7 @@ export default class Hub extends Main implements DocumentListener {
     commands.getCommands().then(e => {
       if(e.indexOf('provision.help') === -1) {
         this.registerCommand('provision.help', args => BaseCommands.Help(this, args), false)
+        this.registerCommand('provision.list', () => BaseCommands.List(this, this.data), false)
       }
     })
   }
@@ -38,6 +39,7 @@ export default class Hub extends Main implements DocumentListener {
   }
 
   public update(data?: any) {
+    this.data = data
     this.timeout && clearTimeout(this.timeout)
     this.timeout = setTimeout(() => this.updateDecorations(data), 0)
   }
