@@ -8,12 +8,23 @@ import Utils from '../core/Utils'
 export default class Hub extends Main implements DocumentListener {
   public document?: Document
   private styling: Map<string, TextEditorDecorationType> = new Map<string, TextEditorDecorationType>()
-  private timeout?: NodeJS.Timeout
   private data?: any
+  private isEnabled: boolean = true
 
   protected initialize() {
     this.document = new Document(this)
     this.document.addListener(this)
+
+    this.registerCommand('provision.toggle.syntax', () => {
+      this.isEnabled = !this.isEnabled
+      if(this.isEnabled) {
+        if(this.document) this.document.update()
+      } else {
+        this.styling.forEach(i => i.dispose())
+        this.styling.clear()
+        this.data = []
+      }
+    }, false)
 
     // Provision wide commands
     commands.getCommands().then(e => {
@@ -39,21 +50,24 @@ export default class Hub extends Main implements DocumentListener {
   }
 
   public update(data?: any) {
+    if(!this.isEnabled) return
+
     if(this.data && this.styling) {
       for(let k in this.data) {
         if(this.data[k].amount !== data[k].amount) {
-          let s = this.styling.get(k)
-          if(s) {
-            s.dispose()
-            this.styling.delete(k)
+          for(let kw of Utils.getGroupKeywords(k)) {
+            let s = this.styling.get(kw)
+            if(s) {
+              s.dispose()
+              this.styling.delete(kw)
+            }
           }
         }
       }
     }
     
     this.data = data
-    this.timeout && clearTimeout(this.timeout)
-    this.timeout = setTimeout(() => this.updateDecorations(data), 0)
+    this.updateDecorations(data)
   }
 
   public detailedUpdate(data?: any)  { }

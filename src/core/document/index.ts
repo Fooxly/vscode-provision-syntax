@@ -32,10 +32,11 @@ export default class Document {
     }, null, this.main.context.subscriptions)
 
     this.editor = window.activeTextEditor
+    
     setTimeout(() => {
       this.update()
       this.detailedUpdate()
-    }, 100)
+    }, 0)
   }
 
   public addListener(listener: DocumentListener) {
@@ -47,7 +48,7 @@ export default class Document {
       return this.listeners.forEach(l => { l.update() })
     }
     let i = this.getDataInRange(this.editor.document.validateRange(new Range(0,0,this.editor.document.lineCount, 0)), this.editor.document)
-    return this.listeners.forEach(l => { l.update(i) })
+    return setTimeout(() => this.listeners.forEach(l => { l.update(i) }), 1)
   }
 
   public detailedUpdate() {
