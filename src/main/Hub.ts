@@ -5,6 +5,14 @@ import Document from '../core/document'
 import { DocumentListener } from '../core/document/DocumentListener'
 import Utils from '../core/Utils'
 
+const DEFAULT_HIGHLIGHT = {
+  color: '#fff',
+  backgroundColor: '#f2b01f',
+  rulerPlacement: 'right',
+  rulerColor: 'rgba(242, 176, 31, 0.8)',
+  highlight: 'keyword'
+}
+
 export default class Hub extends Main implements DocumentListener {
   public document?: Document
   private styling: Map<string, TextEditorDecorationType> = new Map<string, TextEditorDecorationType>()
@@ -98,15 +106,16 @@ export default class Hub extends Main implements DocumentListener {
     let keywords: any = this.config.get('keywords', {})
     let k = keywords[keyword]
     if(!k) return
-    let s = window.createTextEditorDecorationType({
-      backgroundColor: k.backgroundColor,
-      isWholeLine: k.highlight === 'line',
-      color: k.color,
-      overviewRulerLane: this.getRulerLane(k.rulerPlacement),
-      overviewRulerColor: k.rulerColor
+    let decoration = {...DEFAULT_HIGHLIGHT, ...k}
+    let decorationType = window.createTextEditorDecorationType({
+      backgroundColor: decoration.backgroundColor,
+      isWholeLine: decoration.highlight === 'line',
+      color: decoration.color,
+      overviewRulerLane: this.getRulerLane(decoration.rulerPlacement),
+      overviewRulerColor: decoration.rulerColor
     })
-    this.styling.set(keyword, s)
-    return s
+    this.styling.set(keyword, decorationType)
+    return decorationType
   }
 
   private getRulerLane(lane: string): OverviewRulerLane | undefined {
