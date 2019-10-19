@@ -102,7 +102,7 @@ Check out our [Getting Started](HELP.md) guide for more information.
   }]
   ```
 
-  * `keyword`: TODO
+  * `keyword` *(optional)*: If the keyword needs to be different from the keywords object key, if it is not set the keywords object key will be used.
   * `caseSensitive` *(optional)*: Whether or not the keyword needs to be case sensitive. (`true` by default)
   * `includesColon` *(optional)*: Whether or not the keyword is only valid with a colon sign suffix. (`true` by default)
   * `backgroundColor`: TODO
