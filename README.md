@@ -91,13 +91,13 @@ Check out our [Getting Started]("https://packages.fooxly.com/provision/manual") 
   ```json
   "provision.keywords": {
     "NOTE": {
-      "keyword": "NOTE",
-      "caseSensitive": true,
-      "includesColon": true,
-      "backgroundColor": "#d85f88",
-      "rulerPlacement": "right",
-      "rulerColor": "rgba(216, 95, 136, 0.8)",
-      "highlight": "keyword"
+      "keyword": <"string">,
+      "caseSensitive": <true|false>,
+      "includesColon": <true|false>,
+      "backgroundColor": <"color value">,
+      "rulerPlacement": <"left"|"center"|"right"|"full"|"off">,
+      "rulerColor": <"color value">,
+      "highlight": <"keyword"|"line">
     }
   }]
   ```
@@ -105,10 +105,10 @@ Check out our [Getting Started]("https://packages.fooxly.com/provision/manual") 
   * `keyword` *(optional)*: If the keyword needs to be different from the keywords object key, if it is not set the keywords object key will be used.
   * `caseSensitive` *(optional)*: Whether or not the keyword needs to be case sensitive. (`true` by default)
   * `includesColon` *(optional)*: Whether or not the keyword is only valid with a colon sign suffix. (`true` by default)
-  * `backgroundColor`: TODO
-  * `rulerPlacement`: TODO
-  * `rulerColor`: TODO
-  * `highlight`: TODO
+  * `backgroundColor`: Background color when highlighted
+  * `rulerPlacement`: The placement in the ruler
+  * `rulerColor`: Color in overview ruler
+  * `highlight`: Type of highlighting (`keyword` by default)
 
 ## License
 
