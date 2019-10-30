@@ -3,7 +3,7 @@
 	"displayName": "Provision Syntax",
 	"author": "Fooxly <hello@fooxly.com> (https://developers.fooxly.com/)",
 	"description": "Providing a simple way to view all notes in your workspace based on keywords.",
-	"version": "0.1.2",
+	"version": "0.1.4",
 	"keywords": [
 		"fooxly",
 		"vscode",
@@ -28,7 +28,6 @@
 	"license": "MIT",
 	"main": "./out/extension.js",
 	"engines": {
-		"pnpm": "^4",
 		"yarn": "^1",
 		"node": "^10",
 		"vscode": "^1.39.0"
