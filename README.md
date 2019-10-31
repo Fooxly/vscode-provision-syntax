@@ -1,7 +1,7 @@
 <h1 align="center">
   <p align="center">
     <a title="Provision" href="https://marketplace.visualstudio.com/items?itemName=fooxly.provision-syntax">
-      <img src="https://www.fooxly.com/readme/provision.png" alt="Provision" height="150" />
+      <img src="https://developer.fooxly.com/provision/assets/images/icon.png" alt="Provision" height="150" />
     </a>
   </p>
   <p>Provision: Syntax</p>
@@ -18,7 +18,7 @@
 [![Version](https://vsmarketplacebadge.apphb.com/version-short/fooxly.provision-syntax.svg)](https://marketplace.visualstudio.com/items?itemName=fooxly.provision-syntax)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/fooxly.provision-syntax.svg)](https://marketplace.visualstudio.com/items?itemName=fooxly.provision-syntax)
 [![Ratings](https://vsmarketplacebadge.apphb.com/rating-short/fooxly.provision-syntax.svg)](https://marketplace.visualstudio.com/items?itemName=fooxly.provision-syntax)
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/Fooxly/vscode-provision-syntax/blob/master/LICENSE)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
 <br />
@@ -38,13 +38,13 @@ ext install fooxly.provision-syntax
 
 <p>
   <a title="BuyMeACoffee" href="https://www.buymeacoffee.com/fooxly">
-    <img src="https://www.fooxly.com/readme/buymeacoffee.png" alt="BuyMeACoffee" width="25%" style="max-width: 180px" />
+    <img src="https://developer.fooxly.com/general/assets/images/buymeacoffee.png" alt="BuyMeACoffee" width="25%" style="max-width: 180px" />
   </a>&nbsp;&nbsp;
   <a title="Patreon" href="https://www.patreon.com/fooxly">
-    <img src="https://www.fooxly.com/readme/patreon.png" alt="Patreon" width="25%" style="max-width: 180px"/>
+    <img src="https://developer.fooxly.com/general/assets/images/patreon.png" alt="Patreon" width="25%" style="max-width: 180px"/>
   </a>&nbsp;&nbsp;
   <a title="PayPal" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3GEYSYZFXV9GE">
-    <img src="https://www.fooxly.com/readme/paypal.png" alt="PayPal" width="25%" style="max-width: 180px" />
+    <img src="https://developer.fooxly.com/general/assets/images/paypal.png" alt="PayPal" width="25%" style="max-width: 180px" />
   </a>
 </p>
 
@@ -66,7 +66,7 @@ to view the notes you or others in your team have left.
 
 ## 📙 &nbsp;How to use
 
-Check out our [Getting Started]("https://packages.fooxly.com/provision/manual") guide or use `Help: Provision` for more information.
+Check out our [Getting Started]("https://developer.fooxly.com/extensions/provision/guide") guide or use `Help: Provision` for more information.
 
 ## 📕 &nbsp;Commands
 
@@ -101,7 +101,7 @@ Check out our [Getting Started]("https://packages.fooxly.com/provision/manual") 
       "rulerColor": <"color value">,
       "highlight": <"keyword"|"line">
     }
-  }]
+  }
   ```
 
   * `keyword` *(optional)*: If the keyword needs to be different from the keywords object key, if it is not set the keywords object key will be used.
@@ -114,4 +114,4 @@ Check out our [Getting Started]("https://packages.fooxly.com/provision/manual") 
 
 ## License
 
-[MIT](LICENSE) &copy; Fooxly
+[MIT](https://github.com/Fooxly/vscode-provision-syntax/blob/master/LICENSE) &copy; Fooxly

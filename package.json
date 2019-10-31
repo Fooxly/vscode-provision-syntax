@@ -3,7 +3,7 @@
 	"displayName": "Provision Syntax",
 	"author": "Fooxly <hello@fooxly.com> (https://developers.fooxly.com/)",
 	"description": "Providing a simple way to view all notes in your workspace based on keywords.",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"keywords": [
 		"fooxly",
 		"vscode",
@@ -83,6 +83,20 @@
 					"description": "Jump instantly to a note when there are no others inside the file/class/functions",
 					"default": true
 				},
+				"provision.keywords": {
+					"type": "object",
+					"title": "Keywords",
+					"description": "Keywords to look for with a specific configuration"
+				},
+				"provision.groups": {
+					"type": "array",
+					"title": "Keyword groups",
+					"description": "Group certain keywords together with one title and tooltip",
+					"items": {
+						"type": "object",
+						"title": "Keyword group"
+					}
+				},
 				"provision.popup.sorting": {
 					"type": "string",
 					"enum": [
@@ -93,20 +107,6 @@
 					"title": "Pop-up sorting method",
 					"description": "Sorting method used to order the pop-up items",
 					"default": "line_numbers_asc"
-				},
-				"provision.keywords": {
-					"type": "object",
-					"title": "Keywords",
-					"description": "Keywords to look for with a specific configuration"
-				},
-				"provision.groups": {
-					"type": "array",
-					"title": "Keyword groups",
-					"description": "Keyword groups to use",
-					"items": {
-						"type": "object",
-						"title": "Keyword group"
-					}
 				}
 			}
 		}
