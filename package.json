@@ -14,7 +14,8 @@
 		"notes",
 		"keyword",
 		"highlighting",
-		"syntax"
+		"syntax",
+		"provision"
 	],
 	"homepage": "https://github.com/Fooxly/vscode-provision-syntax",
 	"repository": {
