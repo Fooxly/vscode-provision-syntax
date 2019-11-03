@@ -3,7 +3,7 @@
 	"displayName": "Provision Syntax",
 	"author": "Fooxly <hello@fooxly.com> (https://developer.fooxly.com/)",
 	"description": "Providing a simple way to view all notes in your workspace based on keywords.",
-	"version": "0.1.5",
+	"version": "0.1.8",
 	"keywords": [
 		"fooxly",
 		"vscode",
@@ -35,7 +35,8 @@
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
+		"compile": "tsc -p ./ && yarn minify",
+		"minify": "uglifyjs-folder -e -x .js -o out out",
 		"watch": "tsc -watch -p ./",
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "yarn run compile && node ./node_modules/vscode/bin/test"
@@ -44,9 +45,11 @@
 		"underscore": "^1.9.1"
 	},
 	"devDependencies": {
-		"@types/underscore": "^1.9.3",
+		"uglify-js": "^3.6.7",
+		"uglifyjs-folder": "^1.5.1",
 		"@types/mocha": "^2.2.42",
 		"@types/node": "^10.12.21",
+		"@types/underscore": "^1.9.3",
 		"tslint": "^5.12.1",
 		"typescript": "^3.3.1",
 		"vscode": "^1.1.28"
@@ -57,23 +60,27 @@
 		"color": "#272729",
 		"theme": "dark"
 	},
-	"categories": [ 
+	"categories": [
 		"Other"
 	],
 	"activationEvents": [
 		"*"
 	],
 	"contributes": {
-		"commands": [{
-			"command": "provision.help",
-			"title": "Help: Provision"
-		},{
-			"command": "provision.list",
-			"title": "Provision: List"
-		},{
-			"command": "provision.toggle.syntax",
-			"title": "Provision: Toggle Syntax"
-		}],
+		"commands": [
+			{
+				"command": "provision.help",
+				"title": "Help: Provision"
+			},
+			{
+				"command": "provision.list",
+				"title": "Provision: List"
+			},
+			{
+				"command": "provision.toggle.syntax",
+				"title": "Provision: Toggle Syntax"
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "Provision",
