@@ -66,7 +66,7 @@ to view the notes you or others in your team have left.
 
 ## 📙 &nbsp;How to use
 
-Check out our [Getting Started]("https://developer.fooxly.com/extensions/provision/guide") guide or use `Help: Provision` for more information.
+Check out our [Getting Started](https://developer.fooxly.com/extensions/provision/guide) guide or use `Help: Provision` for more information.
 
 ## 📕 &nbsp;Commands
 
