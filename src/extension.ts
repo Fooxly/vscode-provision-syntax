@@ -1,5 +1,5 @@
 
-import { ExtensionContext, extensions, workspace, ConfigurationTarget } from 'vscode'
+import { ExtensionContext, workspace, ConfigurationTarget } from 'vscode'
 import Hub from './main/Hub'
 
 var hub: Hub
@@ -30,8 +30,8 @@ function convert() {
 		for(const kw of o.keywords) {
 			group.keywords.push(kw.keyword)
 			keywords[kw.keyword] = {
-				caseSensitive: kw.caseSensitive ? kw.caseSensitive : true,
-				includesColon: kw.useColons ? kw.useColons : true
+				caseSensitive: kw.caseSensitive !== undefined ? kw.caseSensitive : true,
+				includesColon: kw.useColons !== undefined ? kw.useColons : true
 			}
 			for(const skw of syntax) {
 				if(skw.keyword === kw.keyword) {
