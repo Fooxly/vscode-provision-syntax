@@ -1,29 +1,58 @@
-# Change Log
+<!-- markdownlint-disable MD024 -->
+# Changelog
 
-## Version 3.0.3
+All notable changes to this project will be documented in this file.
 
-### Whats new?
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-- Core optimizations
+## [3.0.4] - 2021-05-29
 
-## Version 3.0.2
+### Added
 
-### Whats new?
+- Automated update publishing using [GitHub Actions](https://github.com/Fooxly/vscode-provision-syntax/actions)
 
-- Set the default value for caseSensitive and includesColon to true.
-- We transfered our assets to another domain.
+### Removed
 
-## Version 3.0.1
+- `underscore` dependency
 
-### Whats new?
+### Fixed
 
-- We noticed some small errors inside the readme, these got removed.
+- Minor errors in documentation
 
-## Version 3.0.0
+## [3.0.3] - 2019-11-07
 
-### Whats new?
+### Changed
 
-- We have made many changes to the core for a more optimized experience.
-- The keyword and group setup has been deeply rethought for a better user experience and an easier start.
-- Introducing a manual to help users with many problems. (This will keep being updated if there is any confusion)
-- Adding `Provision: Toggle Syntax` to toggle the syntax on and off.
+- Minor internal optimizations
+
+## [3.0.2] - 2019-11-07
+
+### Changed
+
+- Set the default value for `caseSensitive` and `includesColon` to `true`
+- Transfered the assets to another domain
+
+## [3.0.1] - 2019-11-04
+
+### Fixed
+
+- Minor errors in documentation
+
+## [3.0.0] - 2019-11-03
+
+### Added
+
+- Manual to help users with some common issues
+- `Provision: Toggle Syntax` command to toggle syntaxing on or off
+
+### Changed
+
+- Many internal optimizations
+- The keyword and group setup has been deeply rethought for a better user experience and an easier start
+
+[3.0.4]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.4/vspackage
+[3.0.3]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.3/vspackage
+[3.0.2]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.2/vspackage
+[3.0.1]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.1/vspackage
+[3.0.0]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.0/vspackage

@@ -91,7 +91,7 @@ Check out our [Getting Started](https://developer.fooxly.com/extensions/provisio
 * `provision.popup.sorting`: Sorting method used to order the pop-up items (`"line_numbers_asc"` by default)
 
   ```json
-  "provision.popup.sorting": <"line_numbers_asc"|"line_numbers_asc"|"category">
+  "provision.popup.sorting": <"line_numbers_asc"|"line_numbers_desc"|"category">
   ```
 
 * `provision.keywords`: Keywords to look for with a specific configuration

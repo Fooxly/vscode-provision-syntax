@@ -1,5 +1,5 @@
 export interface Keywords {
-  
+  //
 }
 
 export interface Groups {
