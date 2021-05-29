@@ -3,7 +3,7 @@ name: publish
 on:
   push:
     branches:
-      - release
+      - master
 
 jobs:
   publish:
@@ -20,5 +20,6 @@ jobs:
           dryRun: true
           pat: abc
           # pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          packagePath: ''
           extensionFile: extension.vsix
           registryUrl: https://marketplace.visualstudio.com
