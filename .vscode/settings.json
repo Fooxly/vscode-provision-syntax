@@ -1,0 +1,29 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "out": false,
+        "dist": false,
+        "yarn.lock": false,
+        "webpack.config.js": false,
+        ".vscodeignore": false,
+        ".yarnrc": false,
+        "CHANGELOG.md": false,
+        "node_modules": false,
+        ".vscode": false,
+        "assets": false,
+        ".eslintrc.json": false,
+        "tsconfig.json": false,
+        ".github": false,
+        ".gitmodules": false,
+        "MANUAL.md": false,
+        "package.json": false
+    },
+    "search.exclude": {
+        "out": true, // set this to false to include "out" folder in search results
+        "dist": true // set this to false to include "dist" folder in search results
+    },
+    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
+    "typescript.tsc.autoDetect": "off",
+    "workspace.isHidden": false,
+    "git.ignoreLimitWarning": true
+}
