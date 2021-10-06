@@ -3,7 +3,7 @@
 	"displayName": "ProVision: Syntax",
 	"author": "Fooxly <hello@fooxly.com> (https://developer.fooxly.com/)",
 	"description": "Providing a simple way to view all notes in your workspace based on keywords.",
-	"version": "3.0.4",
+	"version": "4.0.0",
     "homepage": "https://github.com/Fooxly/vscode-provision-syntax",
 	"publisher": "Fooxly",
 	"icon": "assets/icon.png",
@@ -76,6 +76,17 @@
 							"overviewRulerLane": 4
 						}
 					}
+                },
+                "ProVision.groups": {
+                    "type": "object",
+                    "title": "Keyword Groups",
+                    "description": "Groups in which the keywords will be divided."
+                },
+                "ProVision.list.moveOnSingleResult": {
+                    "type": "boolean",
+                    "title": "Move On Single Result",
+                    "description": "Jump to the note instantly when there are is only 1 result.",
+                    "default": true
                 }
             }
         }

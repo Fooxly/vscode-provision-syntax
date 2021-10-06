@@ -6,6 +6,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2021-10-06
+
+### Added
+
+- More customization options for ProVision: Syntax
+- Local manual for extra help
+
+### Changed
+
+- Improved the ProVision Core
+- Performance improvements to the extension
+
 ## [3.0.4] - 2021-05-29
 
 ### Added
@@ -51,6 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Many internal optimizations
 - The keyword and group setup has been deeply rethought for a better user experience and an easier start
 
+[4.0.0]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.4/vspackage
 [3.0.4]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.4/vspackage
 [3.0.3]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.3/vspackage
 [3.0.2]: https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Fooxly/vsextensions/provision-syntax/3.0.2/vspackage
