@@ -2,15 +2,18 @@ import * as vscode from 'vscode';
 
 import { getResultsForKeyword, onDocumentChangeListener } from './ProVision/DocumentHelper';
 import { getKeyword, getKeywordNames } from './ProVision/utils';
-import { Group } from './Provision/types';
 import ProVision from './ProVision';
 
 const stylingItems = new Map<string, vscode.TextEditorDecorationType>();
+const disposables: vscode.Disposable[] = [];
 let enabled = true;
 
 export function activate(context: vscode.ExtensionContext) {
 	// Initialize the ProVision Core
 	ProVision.initialize(context);
+
+	disposables.push(vscode.commands.registerCommand('ProVision.syntax.toggle', handleToggle));
+
 	// Setup all the configruation settings
 	handleConfigUpdate();
 	// Listen for config changes to apply
@@ -25,8 +28,19 @@ export function activate(context: vscode.ExtensionContext) {
 
 export function deactivate() {
 	removeAllStyles();
+	for (const disposable of disposables) {
+        disposable.dispose();
+    }
 	ProVision.destroy();
 }
+
+const handleToggle = () => {
+	enabled = !enabled;
+	if (!enabled) {
+		removeAllStyles();
+	}
+	handleUpdate();
+};
 
 const handleUpdate = () => {
 	if (!enabled) return;

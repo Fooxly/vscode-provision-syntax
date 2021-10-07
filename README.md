@@ -50,7 +50,7 @@ ext install fooxly.provision-syntax
   </a>
 </p>
 
-# ProVision: Bar
+# ProVision: Syntax
 
 > A package by [Fooxly](https://www.fooxly.com).
 
@@ -73,6 +73,7 @@ You can start using it right away! But if you want to customize it more, you can
 * `Help: ProVision`: Shows you the manual you are currently reading.
 * `ProVision: List All`: Shows you all the notes in the current file.
 * `ProVision: List Group`: Shows you all the notes in the current file from a specifc group.
+* `ProVision: Toggle Syntax`: Toggle the syntax highlighting.
 
 ## ⚙️ Available Settings
 
@@ -86,4 +87,4 @@ You can start using it right away! But if you want to customize it more, you can
 
 ## License
 
-[MIT](https://github.com/Fooxly/vscode-provision-lens/blob/master/LICENSE) &copy; Fooxly
+[MIT](https://github.com/Fooxly/vscode-provision-syntax/blob/master/LICENSE) &copy; Fooxly
