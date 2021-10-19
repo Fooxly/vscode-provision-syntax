@@ -44,11 +44,12 @@ const handleToggle = () => {
 
 const handleUpdate = () => {
 	if (!enabled) return;
+	removeAllStyles();
 	// If there is no active document, the items should be removed
 	if (!vscode.window.activeTextEditor?.document) {
 		return;
 	}
-
+	
 	for (const keyword of getKeywordNames()) {
 		const results = getResultsForKeyword(keyword, vscode.window.activeTextEditor?.document);
 		if (results.length === 0) continue;
