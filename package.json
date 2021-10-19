@@ -3,7 +3,7 @@
 	"displayName": "ProVision: Syntax",
 	"author": "Fooxly <hello@fooxly.com> (https://developer.fooxly.com/)",
 	"description": "Providing a simple way to view all notes in your workspace based on keywords.",
-	"version": "4.0.0",
+	"version": "4.0.1",
     "homepage": "https://github.com/Fooxly/vscode-provision-syntax",
 	"publisher": "Fooxly",
 	"icon": "assets/icon.png",
